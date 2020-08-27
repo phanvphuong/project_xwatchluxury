@@ -28,6 +28,7 @@
     Route::get('admin/order/order-delete/{orderid}','AdminCheckoutController@delete_order');
 
     Route::get('admin/order/management_order/Status/{orderid}','AdminCheckoutController@active_Order_Status');
+    Route::get('admin/order/management_order/Status1/{orderid}','AdminCheckoutController@active_Order_Status1');
     Route::get('admin/order/management_order/UnStatus/{orderid}','AdminCheckoutController@unactive_Order_Status');
     
     //Dùng cho loginAdmin
@@ -38,15 +39,10 @@
     //Dùng cho Admin-User-Add
     
     Route::get('admin/user/user-list','UserAddController@UserList');
-
     route::get('admin/user/delete_customer/{id}','UserAddController@delete_customer');
-
     Route::get('admin/user/user-add','UserAddController@UserAdd');
-
     route::post('admin/user/user-add', 'loginController@getinfo_admin')->name('getregister_admin');
-
     route::get('admin/user/update/{Customername}','UserAddController@update');
-    
     route::post('admin/user/updateProcess/{Customername}','UserAddController@updateProcess');
 
     //Dùng cho Admin-Feedback-Add

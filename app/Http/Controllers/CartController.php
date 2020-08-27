@@ -158,6 +158,10 @@ class CartController extends Controller
         $data['TotalMoney'] = $request->total;
         $data['OrderStatus'] = $request->Status;
         $data['Payment'] = $request->payment_option;
+        $data['CardNumber'] = $request->Card_Number;
+        $data['ExpirationDate'] = $request->Card_EXPIRATION;
+        $data['CVCode'] = $request->Card_Code;
+        $data['CardOwner'] = $request->Card_Owner;
         $data['OrderDate'] = $dt->toDateTimeString();
         $Recipien_info = DB::table('ordermaster')->insertGetId($data);
         Session::put('Orderid',$Recipien_info);

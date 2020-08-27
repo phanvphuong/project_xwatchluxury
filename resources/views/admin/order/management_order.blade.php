@@ -34,22 +34,25 @@
                         <td>{{ $ord_pro -> TotalMoney }}$</td>
                         @if( $ord_pro -> OrderStatus == 0)
                         <td class="center"><a href="{{ URL::to('admin/order/management_order/Status/' .$ord_pro->Orderid) }}">Chưa Xác Nhận</a></td>
-                        @else
-                        <td class="center"><a href="{{ URL::to('admin/order/management_order/UnStatus/' .$ord_pro->Orderid) }}">Đã Xác Nhận</a></td>
+                        @endif
+                        @if($ord_pro -> OrderStatus == 1)
+                        <td class="center"><a href="{{ URL::to('admin/order/management_order/Status1/' .$ord_pro->Orderid) }}">Đã Xác Nhận</a></td>
+                        @endif
+                        @if($ord_pro -> OrderStatus == 2)
+                        <td class="center"><a href="{{ URL::to('admin/order/management_order/UnStatus/' .$ord_pro->Orderid) }}">Đã Giao Hàng</a></td>
                         @endif
                         <td>{{ $ord_pro -> Payment }}</td>
                         <td class="center"><a href="{{ URL::to('admin/order/order_details/' .$ord_pro->Orderid) }}"><i class="fas fa-sign-out-alt"></i></a></td>
-                        
                         <td class="center">
                             <a onclick="return confirm('Bạn có chắc chắn muốn xóa?')" 
                             href="{{URL::to('admin/order/order-delete/'.$ord_pro->Orderid)}}"><i class="fas fa-trash-alt"></i></a>
                         </td>
-                        
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
+        
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->

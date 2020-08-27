@@ -62,6 +62,32 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <div class="col-lg-12">
+                    <h3 class="page-header">Thông Tin
+                        <small>Thanh Toán</small>
+                    </h3>
+                </div>
+                <!-- /.col-lg-12 -->
+                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <thead>
+                        <tr>
+                            <th>Tên Chủ Thẻ</th>
+                            <th>Số Thẻ</th>
+                            <th>EXPIRATION DATE</th>
+                            <th>Số CVC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="odd gradeX">
+                            <td>{{$order_by_customer ->CardOwner }}</td>
+                            <td>{{$order_by_customer ->CardNumber }}</td>
+                            <td>{{$order_by_customer ->ExpirationDate }}</td>
+                            <td>{{$order_by_customer ->CVCode }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div class="col-lg-12">
                     <h3 class="page-header">Giỏ
                         <small>Hàng</small>

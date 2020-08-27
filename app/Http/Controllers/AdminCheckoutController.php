@@ -18,6 +18,7 @@ class AdminCheckoutController extends Controller
         ,'customer.Customername','customer.Customerphone')
         ->orderby('ordermaster.Orderid','desc')
         ->get();
+        
         $management_product = view('admin/order/management_order') ->with('all_order', $all_order);
         return view('admin/layouts-admin/index')->with('admin/order/management_order', $management_product);
     }
@@ -57,6 +58,13 @@ class AdminCheckoutController extends Controller
         DB::table('ordermaster')
         ->where('Orderid',$orderid)
         ->update(['OrderStatus' => "1"]);
+        return redirect()->back();
+    }
+    public function active_Order_Status1($orderid)
+    {
+        DB::table('ordermaster')
+        ->where('Orderid',$orderid)
+        ->update(['OrderStatus' => "2"]);
         return redirect()->back();
     }
     public function unactive_Order_Status($orderid)

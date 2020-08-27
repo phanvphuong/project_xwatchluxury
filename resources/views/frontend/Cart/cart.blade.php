@@ -40,12 +40,12 @@
                 @if($count != 0)
                 <a href="{{URL::to('show_cart')}}">Xem Giỏ Hàng</a>
                 @endif
-                @if(Session::has('khach_hang_dn') == null && $count != 0)
+                <!-- @if(Session::has('khach_hang_dn') == null && $count != 0)
                 <a href="{{route('getlogin')}}">Đăng Nhập<i class="fa fa-arrow-circle-right"></i></a>
                 @endif
                 @if(Session::has('khach_hang_dn') != null && $count != 0)
                 <a href="{{URL::to('Checklogin')}}">Thanh Toán<i class="fa fa-arrow-circle-right"></i></a>
-                @endif
+                @endif -->
             </div>
         </div>
         

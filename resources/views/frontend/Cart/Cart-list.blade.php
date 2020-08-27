@@ -53,13 +53,21 @@
                     </div>
                 </td>
                 <td data-th="Price" >{{ number_format($v_content->price).' ' .'$'  }}</td>
-                <td data-th="Quantity" class="text-center">{{ $v_content->qty }}
-                    <!-- <form action="{{ URl::to('/update_cart_qty') }}" method ="POST">
+                <td data-th="Quantity" class="text-center">
+                    <form action="{{ URl::to('/update_cart_qty') }}" method ="POST">
                         {{ csrf_field() }}
-                        <input type="number" name="cart_quantity" class="form-control text-center" value="{{ $v_content->qty }}">
+                        <select name="cart_quantity">
+                            <option value="1">{{ $v_content->qty }}</option>
+                            @if($v_content->qty == 1)
+                            <option value="2">2</option>
+                            @endif
+                            @if($v_content->qty == 2)
+                            <option value="1">1</option>
+                            @endif
+                        </select>
                         <input type="hidden" value ="{{$v_content->rowId}}" name="rowId_cart" class="from-control">
                         <input type="submit" value ="update" name="update_qty" class="btn btn-danger btn-sm">
-                    </form> -->
+                    </form>
                 </td>
                 <td data-th="Subtotal" class="text-center">
                     <?php 
